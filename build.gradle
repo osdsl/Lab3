@@ -33,3 +33,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+task createJar(type: Jar) {
+    from sourceSets.main.output
+    archiveFileName = 'lab3.jar'
+}
+
+build.dependsOn(createJar)
